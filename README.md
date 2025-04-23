@@ -1,8 +1,6 @@
 # WorkHive-Project
 <h1 align="center">WORKHIVE</h1>
-<p align="center">
-<img alt="Logo" width="142px" src="client/public/media/logo2.png"/>
-</p>
+
 
 <h3 align="center">A freelancing website for college students using the toolset from the MERN stack.</h3>
 
@@ -129,7 +127,6 @@ npm start
 <a name="projectLink"></a> 
 ## Website Link
 
-* [Workhive](https://workhive-one.vercel.app)
 
 
 <a name="depend"></a>
@@ -148,17 +145,3 @@ npm start
 * Stripe(to monitor payments)
 * Postman
 
-<a name="contri"></a>
-## Contributors
-
-* [Sourav Paul](https://github.com/PaulSaurav19)
-* [Vishesh Agrawal](https://github.com/Vishesh-MNNIT)
-
-## Feedback
-Feel free to file an issue if you come across any bugs
-
-### Made at:
-
-<p align="center">
-<img alt="MNNIT" width="112px" src="http://www.mnnit.ac.in/institutelogo/MNNIT%20(logo)png.png" />
-</p>
