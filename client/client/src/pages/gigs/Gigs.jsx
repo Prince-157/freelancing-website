@@ -48,9 +48,9 @@ const Gigs = () => {
   return (
     <div className='gigs'>
       <div className="container">
-        <span className="breadcrumbs">Workhive{">"}{category[0]?.toUpperCase() + category.slice(1)}</span>
+        <span className="breadcrumbs">FreeLynx{">"}{category[0]?.toUpperCase() + category.slice(1)}</span>
         <h1>{category[0]?.toUpperCase() + category.slice(1)}</h1>
-        <p>Explore the boundaries of art and technology with Workhive's {category} artists</p>
+        <p>Explore the boundaries of art and technology with FreeLynx's {category} artists</p>
         <div className="menu">
           <div className="left">
             <span>Budget</span>

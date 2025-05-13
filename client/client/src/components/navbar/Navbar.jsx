@@ -116,7 +116,7 @@ const Navbar = () => {
       <div className="container">
         <div className="logo">
           <Link to="/" className="link">
-            <span className="text">workhive</span>
+            <span className="text">FreeLynx</span>
           </Link>
           <span className="dot">.</span>
         </div>

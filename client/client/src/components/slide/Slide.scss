@@ -1,5 +1,25 @@
 .slide-Container {
-    padding: 100px 0;
+    padding: 80px 0;
     width: 95%;
     margin: auto;
-}
+  
+    .slick-slide > div {
+      margin: 0 10px;
+    }
+  
+    .slick-list {
+      margin: 0 -10px;
+    }
+  
+    .slick-prev, .slick-next {
+      width: 40px;
+      height: 40px;
+      z-index: 10;
+  
+      &:before {
+        font-size: 40px;
+        color: #333;
+      }
+    }
+  }
+  

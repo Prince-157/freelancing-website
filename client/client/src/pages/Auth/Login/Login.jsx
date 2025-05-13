@@ -16,11 +16,15 @@ const Login = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useRecoilState(userState);
+  const [isAnimating, setIsAnimating] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+    // Trigger initial animation after mount
+    const timer = setTimeout(() => setIsAnimating(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleFormInput = (event) => {
     const { value, name } = event.target;
@@ -36,6 +40,9 @@ const Login = () => {
     for(let key in formInput) {
       if(formInput[key] === '') {
         toast.error('Please fill all input fields: ' + key);
+        // Add error animation
+        setIsAnimating(false);
+        setTimeout(() => setIsAnimating(true), 10);
         return;
       }
     }
@@ -49,13 +56,18 @@ const Login = () => {
         duration: 3000,
         icon: "😃"
       });
-      navigate('/');
+      // Add success transition
+      setIsAnimating(false);
+      setTimeout(() => navigate('/'), 500);
     }
     catch ({ response: { data } }) {
       setError(data.message);
       toast.error(data.message, {
         duration: 3000,
       });
+      // Trigger error animation
+      setIsAnimating(false);
+      setTimeout(() => setIsAnimating(true), 10);
     }
     finally {
       setLoading(false);
@@ -64,19 +76,34 @@ const Login = () => {
   }
 
   return (
-    <div className='login'>
+    <div className={`login ${isAnimating ? 'active' : ''}`}>
       <form action="" onSubmit={handleFormSubmit}>
         <h1>Sign in</h1>
-        <label htmlFor="">Username</label>
-        <input name='username' placeholder='johndoe' onChange={handleFormInput} />
+        <label htmlFor="username">Username</label>
+        <input 
+          id="username"
+          name='username' 
+          placeholder='johndoe' 
+          onChange={handleFormInput} 
+          autoComplete="username"
+        />
 
-        <label htmlFor="">Password</label>
-        <input name='password' type='password' placeholder='password' onChange={handleFormInput} />
-        <button disabled={loading} type='submit'>{ loading ? 'Loading' : 'Login' }</button>
+        <label htmlFor="password">Password</label>
+        <input 
+          id="password"
+          name='password' 
+          type='password' 
+          placeholder='password' 
+          onChange={handleFormInput} 
+          autoComplete="current-password"
+        />
+        <button disabled={loading} type='submit'>
+          {loading ? 'Loading...' : 'Login'}
+        </button>
         <span>{error && error}</span>
       </form>
     </div>
   )
 }
 
-export default Login
+export default Login;

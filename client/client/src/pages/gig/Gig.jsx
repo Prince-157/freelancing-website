@@ -42,7 +42,7 @@ const Gig = () => {
             ? 'Something went wrong!'
             : <div className="container">
               <div className="left">
-                <span className="breadcrumbs">WorkHive{">"}{data?.category}</span>
+                <span className="breadcrumbs">FreeLynx{">"}{data?.category}</span>
                 <h1>{data?.title}</h1>
                 <div className="user">
                   <img

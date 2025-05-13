@@ -1,56 +1,72 @@
 .footer {
-    display: flex;
-    justify-content: center;
+    background-color: #fafafa;
+    padding: 50px 0 20px;
     color: #999;
-    margin: 50px 0;
-
-    img {
-        width: 24px;
-        height: 24px;
-    }
+    font-size: 14px;
 
     .container {
-        width: 95%;
-        margin: auto;
+        width: 90%;
+        max-width: 1400px;
+        margin: 0 auto;
 
         .top {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            padding: 50px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            padding: 30px 0;
 
             .item {
-                width: 180px;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-
-                h1 {
+                h2 {
                     font-size: 16px;
-                    color: #404145;;
+                    color: #404145;
+                    margin-bottom: 20px;
+                    font-weight: 700;
                 }
 
-                span {
-                    font-weight: 400;
-                    color: #74767e;
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    li {
+                        .link, span {
+                            color: #74767e;
+                            text-decoration: none;
+                            transition: color 0.2s ease;
+                            font-weight: 400;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: #1dbf73;
+                            }
+                        }
+                    }
                 }
             }
 
-            @media screen and (max-width: 900px) {
-                justify-content: flex-start;
-                flex-wrap: wrap;
+            @media (max-width: 768px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (max-width: 480px) {
+                grid-template-columns: 1fr;
             }
         }
 
         hr {
-            width: 100%;
-            border: .5px solid rgb(228, 227, 227);
+            border: none;
+            border-top: 1px solid #e4e3e3;
+            margin: 20px 0;
         }
 
         .bottom {
             display: flex;
-            align-items: center;
+            flex-direction: row;
             justify-content: space-between;
+            align-items: center;
             padding: 20px 0;
             
             .left {
@@ -58,30 +74,68 @@
                 align-items: center;
                 gap: 20px;
                 
+                .logo {
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: #404145;
+                }
+
                 span {
                     font-size: 13px;
+                    color: #74767e;
                 }
             }
+
             .right {
                 display: flex;
-                flex-wrap: wrap;
                 align-items: center;
-                gap: 30px;
+                gap: 20px;
 
                 .social {
                     display: flex;
-                    align-items: center;
-                    gap: 20px;
+                    gap: 15px;
+
+                    .social-icon {
+                        width: 24px;
+                        height: 24px;
+                        opacity: 0.8;
+                        transition: opacity 0.2s ease;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
                 }
 
                 .link {
                     display: flex;
                     align-items: center;
-                    gap: 10px;
+                    gap: 5px;
+                    cursor: pointer;
+
+                    img {
+                        width: 16px;
+                        height: 16px;
+                        opacity: 0.7;
+                    }
+
+                    span {
+                        font-size: 13px;
+                        color: #74767e;
+                    }
+
+                    &:hover {
+                        img {
+                            opacity: 1;
+                        }
+                        span {
+                            color: #1dbf73;
+                        }
+                    }
                 }
             }
 
-            @media screen and (max-width: 900px) {
+            @media (max-width: 768px) {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 20px;

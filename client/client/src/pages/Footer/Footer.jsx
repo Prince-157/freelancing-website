@@ -3,153 +3,151 @@ import { Link } from "react-router-dom";
 import './Footer.scss';
 
 const Footer = () => {
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
+  const categories = [
+    { name: "Graphic & Design", path: "/gigs?category=design" },
+    { name: "Digital Marketing", path: "/gigs?category=social" },
+    { name: "Writing & Translation", path: "/gigs?category=books" },
+    { name: "Video & Animation", path: "/gigs?category=video" },
+    { name: "Music & Audio", path: "/gigs?category=voice" },
+    { name: "Programming & Tech", path: "/gigs?category=tech" },
+    { name: "WordPress", path: "/gigs?category=wordpress" },
+    { name: "AI Artists", path: "/gigs?category=ai" },
+    { name: "SEO", path: "/gigs?category=seo" },
+    { name: "Illustration", path: "/gigs?category=illustration" },
+    { name: "Data Entry", path: "/gigs?category=dataentry" }
+  ];
+
+  const aboutLinks = [
+    "Careers", "Press & News", "Partnership", 
+    "Privacy Policy", "Terms of Service"
+  ];
+
+  const supportLinks = [
+    "Help & Support", "Trust & Safety", 
+    "Selling on FreeLynx", "Buying on FreeLynx"
+  ];
+
+  const communityLinks = [
+    "Events", "Blog", "Forum", "Community Standards"
+  ];
+
+  const moreLinks = [
+    "FreeLynx Community", "FreeLynx Pro", 
+    "FreeLynx Studios", "Get Inspired"
+  ];
+
+  const socialIcons = [
+    { src: "./media/twitter.png", alt: "Twitter" },
+    { src: "./media/facebook.png", alt: "Facebook" },
+    { src: "./media/linkedin.png", alt: "LinkedIn" },
+    { src: "./media/pinterest.png", alt: "Pinterest" },
+    { src: "./media/instagram.png", alt: "Instagram" }
+  ];
+
   return (
-    <div className='footer'>
+    <footer className='footer'>
       <div className="container">
         <div className="top">
           <div className="item">
-            <h1>Categories</h1>
-            <span>
-            <Link to="/gigs?category=design" className="link">
-                  Graphic & Design
+            <h2>Categories</h2>
+            <ul>
+              {categories.map((category, index) => (
+                <li key={index}>
+                  <Link to={category.path} className="link">
+                    {category.name}
                   </Link>
-            </span>
-
-            <span>
-            <Link to="/gigs?category=social" className="link">
-                 Digital Marketing
-                  </Link>
-            </span>
-
-            <span>
-            <Link to="/gigs?category=books" className="link">
-                Writing & Translation
-                  </Link>
-            </span>
-            <span>
-            <Link to="/gigs?category=video" className="link">
-                 Video & Animation
-                  </Link>
-           </span>
-
-            <span>
-            <Link to="/gigs?category=voice" className="link">
-                    Music & Audio
-                  </Link>
-           </span>
-
-            <span>
-            <Link to="/gigs?category=tech" className="link">
-            Programming & Tech
-                  </Link>
-           </span>
-
-            <span>
-            <Link to="/gigs?category=wordpress" className="link">
-           WordPress</Link>
-           </span>
-
-            <span>
-            <Link to="/gigs?category=ai" className="link">
-            AI artists</Link>
-           </span>
-
-            <span>
-            <Link to="/gigs?category=seo" className="link">
-            SEO</Link>
-          </span>
-
-            <span>
-            <Link to="/gigs?category=illustration" className="link">
-            Illustration</Link>
-          </span>
-
-          <span>
-            <Link to="/gigs?category=dataentry" className="link">
-            Data Entry</Link>
-          </span>
-
-
+                </li>
+              ))}
+            </ul>
           </div>
+          
           <div className="item">
-            <h1>About</h1>
-            <span>Careers</span>
-            <span>Press & News</span>
-            <span>Partnership</span>
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
-            {/* <span>Intellectual Property Claims</span>
-            <span>Investor Relations</span> */}
+            <h2>About</h2>
+            <ul>
+              {aboutLinks.map((link, index) => (
+                <li key={index}>
+                  <span>{link}</span>
+                </li>
+              ))}
+            </ul>
           </div>
+          
           <div className="item">
-            <h1>Support</h1>
-            <span>Help & Support</span>
-            <span>Trust & Safety</span>
-            <span>Selling on WorkHive</span>
-            <span>Buying on WorkHive</span>
+            <h2>Support</h2>
+            <ul>
+              {supportLinks.map((link, index) => (
+                <li key={index}>
+                  <span>{link}</span>
+                </li>
+              ))}
+            </ul>
           </div>
+          
           <div className="item">
-            <h1>Community</h1>
-            <span>Events</span>
-            <span>Blog</span>
-            <span>Forum</span>
-            <span>Community Standards</span>
-            {/* <span>Podcast</span>
-            <span>Affiliats</span>
-            <span>Invite a Friend</span> */}
+            <h2>Community</h2>
+            <ul>
+              {communityLinks.map((link, index) => (
+                <li key={index}>
+                  <span>{link}</span>
+                </li>
+              ))}
+            </ul>
           </div>
+          
           <div className="item">
-            <h1>More From WorkHive</h1>
-            <span>WorkHive Community</span>
-            <span>WorkHive Pro</span>
-            <span>WorkHive Studios</span>
-            <span>Get Inspired</span>
-
-            {/* <span>WorkHive Guild</span>
-            <span>WorkHive Logo Maker</span>
-            <span>WorkHive Select</span>
-            <span>Clear Voice</span>
-            <span>WorkHive Workspace</span>
-            <span>Learn</span>
-            <span>Working Not Working</span> */}
+            <h2>More From FreeLynx</h2>
+            <ul>
+              {moreLinks.map((link, index) => (
+                <li key={index}>
+                  <span>{link}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
+        
         <hr />
+        
         <div className="bottom">
           <div className="left">
-            <h2>workhive</h2>
-            <span>© WorkHive Private Ltd. {new Date().getFullYear()}</span>
+            <h2 className="logo">FreeLynx</h2>
+            <span>© FreeLynx Private Ltd. {new Date().getFullYear()}</span>
           </div>
+          
           <div className="right">
             <div className="social">
-              <img src="./media/twitter.png" alt="" />
-              <img src="./media/facebook.png" alt="" />
-              <img src="./media/linkedin.png" alt="" />
-              <img src="./media/pinterest.png" alt="" />
-              <img src="./media/instagram.png" alt="" />
+              {socialIcons.map((icon, index) => (
+                <img 
+                  key={index} 
+                  src={icon.src} 
+                  alt={icon.alt} 
+                  className="social-icon"
+                />
+              ))}
             </div>
+            
             <div className="link">
-              <img src="./media/language.png" alt="" />
+              <img src="./media/language.png" alt="Language" />
               <span>English</span>
             </div>
+            
             <div className="link">
-              <img src="./media/coin.png" alt="" />
+              <img src="./media/coin.png" alt="Currency" />
               <span>INR</span>
             </div>
+            
             <div className="link">
-              <img src="./media/accessibility.png" alt="" />
-              {/* <span>USD</span> */}
+              <img src="./media/accessibility.png" alt="Accessibility" />
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 
-export default Footer
+export default Footer;

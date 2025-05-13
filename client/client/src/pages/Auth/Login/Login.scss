@@ -1,55 +1,121 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
+
+  form {
+    width: 360px;
+    padding: 40px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    form {
-      width: 360px;
-      padding: 100px 0px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-  
-      h1 {
-        color: gray;
-        margin-bottom: 20px;
-      }
-  
-      label {
-        color: gray;
-        font-size: 18px;
-      }
-  
-      input,
-      textarea {
-        padding: 20px;
-        border: 1px solid rgb(216, 214, 214);
-      }
-  
-      button {
-        border: none;
-        padding: 20px;
-        color: white;
-        font-weight: 500;
-        font-size: 18px;
-        background-color: #1dbf73;
-        cursor: pointer;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.6s ease-out forwards;
+    transition: all 0.3s ease;
 
-        &:disabled {
-          background-color: gray;
-          color: #fff;
-          cursor: not-allowed;
-        }
-      }
-  
-      span{
-        color: red;
-        font-size: 14px;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    label {
+      color: #555;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    input {
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #1dbf73;
+        box-shadow: 0 0 0 3px rgba(29, 191, 115, 0.2);
       }
 
-      @media screen and (max-width: 600px) {
-        width: 80%;
-        margin: auto;
+      &::placeholder {
+        color: #aaa;
       }
     }
+
+    button {
+      border: none;
+      padding: 16px;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      background-color: #1dbf73;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      &:hover:not(:disabled) {
+        background-color: #18a362;
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        background-color: #aaa;
+        color: #fff;
+        cursor: not-allowed;
+        transform: none;
+      }
+    }
+
+    span {
+      color: #ff4444;
+      font-size: 14px;
+      text-align: center;
+      height: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 85%;
+      padding: 30px 20px;
+    }
   }
+}

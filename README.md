@@ -1,5 +1,5 @@
-# WorkHive-Project
-<h1 align="center">WORKHIVE</h1>
+# FreeLynx-Project
+<h1 align="center">FreeLynx</h1>
 
 
 <h3 align="center">A freelancing website for college students using the toolset from the MERN stack.</h3>
@@ -83,7 +83,7 @@ This project was built using React, Redux, Sass, HTML, JavaScript, Rest API, Nod
 
 1) Clone the repository using:
 ```bash
-https://github.com/PaulSaurav19/WorkHive-Project.git
+https://github.com/Prince-157/freelancing-website.git
 ```
 2) Run the following in both the "client" and "server" folders:
 ```bash
