@@ -2,7 +2,8 @@
 <h1 align="center">FreeLynx</h1>
 
 
-<h3 align="center">A freelancing website for college students using the toolset from the MERN stack.</h3>
+<h3 align="center"A MERN Stack and Next.js based Freelancer Marketplace for Local Services with Secure
+Authentication, Profile Management, and Booking System.</h3>
 
 <br />
 
